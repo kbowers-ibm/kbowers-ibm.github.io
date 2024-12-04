@@ -1,1 +1,0 @@
-{"version":3,"file":"MorphingAction.d.ts","sourceRoot":"","sources":["../../../../../../src/diagram/nodes/morphing/MorphingAction.ts"],"names":[],"mappings":"AAmBA,MAAM,MAAM,cAAc,GAAG;IAC3B,EAAE,EAAE,MAAM,CAAC;IACX,GAAG,EAAE,MAAM,CAAC;IACZ,KAAK,EAAE,MAAM,CAAC;IACd,MAAM,EAAE,MAAM,IAAI,CAAC;IACnB,IAAI,EAAE,KAAK,CAAC,YAAY,CAAC;CAC1B,CAAC"}
