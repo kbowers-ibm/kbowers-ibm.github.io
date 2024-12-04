@@ -1,0 +1,1 @@
+{"version":3,"file":"Metadata.d.ts","sourceRoot":"","sources":["../../../src/propertiesPanel/metadata/Metadata.tsx"],"names":[],"mappings":"AAoBA,OAAO,kDAAkD,CAAC;AAQ1D,OAAO,EAAE,YAAY,EAAE,MAAM,+DAA+D,CAAC;AAU7F,OAAO,gBAAgB,CAAC;AAExB,wBAAgB,QAAQ,CAAC,EAAE,GAAG,EAAE,EAAE;IAAE,GAAG,EAAE,SAAS,GAAG;QAAE,MAAM,EAAE,MAAM,CAAC;QAAC,iBAAiB,CAAC,EAAE,YAAY,CAAA;KAAE,CAAA;CAAE,eAmL1G"}
