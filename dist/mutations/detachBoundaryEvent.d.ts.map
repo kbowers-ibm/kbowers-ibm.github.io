@@ -1,1 +1,0 @@
-{"version":3,"file":"detachBoundaryEvent.d.ts","sourceRoot":"","sources":["../../src/mutations/detachBoundaryEvent.ts"],"names":[],"mappings":"AAuBA,OAAO,EAAE,KAAK,EAAE,MAAM,gBAAgB,CAAC;AAIvC,wBAAgB,mBAAmB,CAAC,EAClC,WAAW,EACX,kBAAkB,GACnB,EAAE;IACD,WAAW,EAAE,KAAK,CAAC,MAAM,CAAC,CAAC,OAAO,CAAC,CAAC,aAAa,CAAC,CAAC;IACnD,kBAAkB,EAAE,MAAM,GAAG,SAAS,CAAC;CACxC,QA2EA"}
