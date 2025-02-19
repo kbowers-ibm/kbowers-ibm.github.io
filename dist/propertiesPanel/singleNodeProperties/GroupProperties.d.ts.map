@@ -1,0 +1,1 @@
+{"version":3,"file":"GroupProperties.d.ts","sourceRoot":"","sources":["../../../src/propertiesPanel/singleNodeProperties/GroupProperties.tsx"],"names":[],"mappings":"AAoBA,OAAO,EAAE,cAAc,EAAE,MAAM,+DAA+D,CAAC;AAC/F,OAAO,EAAE,UAAU,EAAE,MAAM,+BAA+B,CAAC;AAI3D,wBAAgB,eAAe,CAAC,EAAE,KAAK,EAAE,EAAE;IAAE,KAAK,EAAE,UAAU,CAAC,cAAc,CAAC,GAAG;QAAE,WAAW,EAAE,OAAO,CAAA;KAAE,CAAA;CAAE,eAM1G"}

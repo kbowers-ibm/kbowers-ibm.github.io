@@ -1,0 +1,1 @@
+{"version":3,"file":"InteractiveDropdown.d.ts","sourceRoot":"","sources":["../../../src/propertiesPanel/dropdown/InteractiveDropdown.tsx"],"names":[],"mappings":"AAOA,wBAAgB,mBAAmB,CAAC,KAAK,EAAE;IACzC,KAAK,EAAE,MAAM,GAAG,IAAI,CAAC;IACrB,QAAQ,EAAE,CAAC,KAAK,EAAE,MAAM,KAAK,IAAI,CAAC;IAClC,KAAK,EAAE,MAAM,EAAE,CAAC;IAChB,WAAW,CAAC,EAAE,MAAM,CAAC;CACtB,eA0EA"}

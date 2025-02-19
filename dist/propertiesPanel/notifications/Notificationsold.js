@@ -1,0 +1,48 @@
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
+import { useState } from "react";
+import { Modal, ModalVariant } from "@patternfly/react-core/dist/js/components/Modal";
+import { Button, ButtonVariant } from "@patternfly/react-core/dist/js/components/Button";
+import { Dropdown, DropdownItem, DropdownToggle } from "@patternfly/react-core/dist/js/components/Dropdown";
+import { Grid, GridItem } from "@patternfly/react-core/dist/js/layouts/Grid";
+import { Radio } from "@patternfly/react-core/dist/js/components/Radio";
+import { Switch } from "@patternfly/react-core/dist/js/components/Switch";
+import { TextInput } from "@patternfly/react-core/dist/js/components/TextInput";
+import { TextArea } from "@patternfly/react-core/dist/js/components/TextArea";
+import { Title } from "@patternfly/react-core/dist/js/components/Title";
+import "./Notifications.css";
+import { EmptyState } from "@patternfly/react-core/dist/js/components/EmptyState/EmptyState";
+import { Bullseye } from "@patternfly/react-core/dist/js/layouts/Bullseye/Bullseye";
+import { EmptyStateBody } from "@patternfly/react-core/dist/js/components/EmptyState/EmptyStateBody";
+import CubesIcon from "@patternfly/react-icons/dist/js/icons/cubes-icon";
+import { EmptyStateIcon } from "@patternfly/react-core/dist/js/components/EmptyState/EmptyStateIcon";
+export function Notifications({ isOpen, onClose }) {
+    const [notifications, setNotifications] = useState([]);
+    const [taskStateType, setTaskStateType] = useState("Not started");
+    const [taskExpiration, setTaskExpiration] = useState("Time period");
+    const [notifyValue, setNotifyValue] = useState("");
+    const [notifyUnit, setNotifyUnit] = useState("minutes");
+    const [isRepeat, setIsRepeat] = useState(false);
+    const [from, setFrom] = useState(undefined);
+    const [toUsers, setToUsers] = useState(undefined);
+    const [replyTo, setReplyTo] = useState(undefined);
+    const [toGroups, setToGroups] = useState(undefined);
+    const [emails, setEmails] = useState("");
+    const [subject, setSubject] = useState("");
+    const [body, setBody] = useState("");
+    const addNotification = () => {
+        const newNotification = {
+            id: Math.random().toString(36).substr(2, 9),
+            message: "",
+            type: "Info",
+            timestamp: new Date().toISOString(),
+            status: "unread",
+        };
+        setNotifications([...notifications, newNotification]);
+    };
+    const removeNotification = (index) => {
+        setNotifications(notifications.filter((_, i) => i !== index));
+    };
+    const periodUnits = ["minutes", "hours", "days", "months", "years"];
+    return (_jsx(Modal, { className: "notifications-modal", "aria-labelledby": "Notifications", title: "Notifications", variant: ModalVariant.large, isOpen: isOpen, onClose: onClose, children: notifications.length > 0 ? (_jsx(_Fragment, { children: _jsxs(Grid, { hasGutter: true, children: [_jsxs(GridItem, { span: 12, children: [_jsx(Title, { headingLevel: "h4", children: "Task State Type" }), _jsxs("div", { style: { display: "flex", alignItems: "center", gap: "16px" }, children: [_jsx(Radio, { label: "Not started (Created, ready or reserved)", isChecked: taskStateType === "Not started", onChange: () => setTaskStateType("Not started"), id: "task-state-not-started", name: "task-state-type" }), _jsx(Radio, { label: "Not completed (Created, ready, reserved, in progress or suspended)", isChecked: taskStateType === "Not completed", onChange: () => setTaskStateType("Not completed"), id: "task-state-not-completed", name: "task-state-type" })] })] }), _jsxs(GridItem, { span: 12, children: [_jsx(Title, { headingLevel: "h4", children: "Task Expiration Definition" }), _jsx(Dropdown, { toggle: _jsx(DropdownToggle, { onToggle: () => setTaskExpiration(taskExpiration === "Time period" ? "" : "Time period"), children: taskExpiration }), isOpen: !!taskExpiration, dropdownItems: ["Time period", "Expression", "Date/time"].map((option) => (_jsx(DropdownItem, { onClick: () => setTaskExpiration(option), children: option }, option))) })] }), _jsxs(GridItem, { span: 12, children: [_jsx(Title, { headingLevel: "h4", children: "Notify" }), _jsxs("div", { style: { display: "flex", alignItems: "center", gap: "8px" }, children: [_jsx(TextInput, { type: "number", value: notifyValue, onChange: (val) => setNotifyValue(val ? parseInt(val) : ""), placeholder: "Enter value", style: { width: "120px" } }), _jsx(Dropdown, { toggle: _jsx(DropdownToggle, { onToggle: () => setNotifyUnit(notifyUnit === "minutes" ? "" : "minutes"), children: notifyUnit }), isOpen: !!notifyUnit, dropdownItems: periodUnits.map((unit) => (_jsx(DropdownItem, { onClick: () => setNotifyUnit(unit), children: unit }, unit))) })] })] }), _jsxs(GridItem, { span: 12, children: [_jsx(Title, { headingLevel: "h4", children: "Notification Repeat" }), _jsx(Switch, { id: "notification-repeat", label: "Yes", labelOff: "No", isChecked: isRepeat, onChange: (checked) => setIsRepeat(checked) })] }), _jsxs(GridItem, { span: 12, children: [_jsx(Title, { headingLevel: "h4", children: "Message" }), _jsxs(Grid, { hasGutter: true, children: [_jsx(GridItem, { span: 6, children: _jsx(Dropdown, { toggle: _jsx(DropdownToggle, { onToggle: () => setFrom(from === "Select..." ? "" : "Select..."), children: from || "From:" }), isOpen: !!from, dropdownItems: ["User A", "User B", "User C"].map((option) => (_jsx(DropdownItem, { onClick: () => setFrom(option), children: option }, option))) }) }), _jsx(GridItem, { span: 6, children: _jsx(Dropdown, { toggle: _jsx(DropdownToggle, { onToggle: () => setToUsers(toUsers === "Select..." ? "" : "Select..."), children: toUsers || "To: user(s)" }), isOpen: !!toUsers, dropdownItems: ["User X", "User Y", "User Z"].map((option) => (_jsx(DropdownItem, { onClick: () => setToUsers(option), children: option }, option))) }) }), _jsx(GridItem, { span: 6, children: _jsx(Dropdown, { toggle: _jsx(DropdownToggle, { onToggle: () => setReplyTo(replyTo === "Select..." ? "" : "Select..."), children: replyTo || "Reply to (optional)" }), isOpen: !!replyTo, dropdownItems: ["Reply A", "Reply B", "Reply C"].map((option) => (_jsx(DropdownItem, { onClick: () => setReplyTo(option), children: option }, option))) }) }), _jsx(GridItem, { span: 6, children: _jsx(Dropdown, { toggle: _jsx(DropdownToggle, { onToggle: () => setToGroups(toGroups === "Select..." ? "" : "Select..."), children: toGroups || "To: group(s)" }), isOpen: !!toGroups, dropdownItems: ["Group 1", "Group 2", "Group 3"].map((option) => (_jsx(DropdownItem, { onClick: () => setToGroups(option), children: option }, option))) }) }), _jsx(GridItem, { span: 12, children: _jsx(TextInput, { value: emails, onChange: setEmails, placeholder: "Enter emails separated by comma" }) }), _jsx(GridItem, { span: 12, children: _jsx(TextInput, { value: subject, onChange: setSubject, placeholder: "Enter the subject here" }) }), _jsx(GridItem, { span: 12, children: _jsx(TextArea, { value: body, onChange: setBody, placeholder: "Enter the body of your message here" }) })] })] }), _jsxs(GridItem, { span: 12, style: { textAlign: "right" }, children: [_jsx(Button, { variant: ButtonVariant.primary, onClick: () => console.log("Submit notification"), children: "Submit" }), _jsx(Button, { variant: ButtonVariant.link, onClick: onClose, children: "Cancel" })] })] }) })) : (_jsx("div", { className: "kie-bpmn-editor--notifications--empty-state", children: _jsx(Bullseye, { children: _jsxs(EmptyState, { children: [_jsx(EmptyStateIcon, { icon: CubesIcon }), _jsx(Title, { headingLevel: "h4", children: "No notifications yet" }), _jsx(EmptyStateBody, { children: "This represents the empty state for notifications. You can add notifications to get started." }), _jsx(Button, { variant: "primary", onClick: addNotification, children: "Add notification" })] }) }) })) }));
+}
+//# sourceMappingURL=Notificationsold.js.map

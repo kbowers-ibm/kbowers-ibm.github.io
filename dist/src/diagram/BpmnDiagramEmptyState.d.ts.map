@@ -1,0 +1,1 @@
+{"version":3,"file":"BpmnDiagramEmptyState.d.ts","sourceRoot":"","sources":["../../../src/diagram/BpmnDiagramEmptyState.tsx"],"names":[],"mappings":"AAgCA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAC;AAG/B,wBAAgB,qBAAqB,CAAC,EACpC,iBAAiB,GAClB,EAAE;IACD,iBAAiB,EAAE,KAAK,CAAC,QAAQ,CAAC,KAAK,CAAC,cAAc,CAAC,OAAO,CAAC,CAAC,CAAC;CAClE,eA4DA"}

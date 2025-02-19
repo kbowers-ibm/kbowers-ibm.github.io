@@ -1,0 +1,1 @@
+{"version":3,"file":"_NodeNature.d.ts","sourceRoot":"","sources":["../../src/mutations/_NodeNature.ts"],"names":[],"mappings":"AAmBA,OAAO,EAAE,YAAY,EAAE,MAAM,8BAA8B,CAAC;AAG5D,oBAAY,UAAU;IACpB,IAAI,SAAS;IACb,SAAS,cAAc;IACvB,oBAAoB,yBAAyB;IAC7C,QAAQ,aAAa;IACrB,OAAO,YAAY;CACpB;AAED,eAAO,MAAM,WAAW,EAAE,MAAM,CAAC,YAAY,EAAE,UAAU,CAqBxD,CAAC"}
